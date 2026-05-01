@@ -3,151 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tank Fans | Сообщество стальных гигантов</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>KREED & TANKS | Steel & Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Общие стили */
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #0b0c10;
-            color: #c5c6c7;
-            line-height: 1.6;
+        :root {
+            --neon-pink: #ff0055;
+            --steel: #45a29e;
+            --dark-bg: #0b0c10;
         }
 
-        /* Шапка сайта */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Главный экран: Микс гламура и войны */
         header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?auto=format&fit=crop&q=80&w=1600') no-repeat center/cover;
-            height: 60vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background: 
+                linear-gradient(45deg, rgba(11, 12, 16, 0.9), rgba(255, 0, 85, 0.2)),
+                url('https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?auto=format&fit=crop&q=80&w=1600'); /* Танковый фон */
+            background-size: cover;
+            background-position: center;
             text-align: center;
-            border-bottom: 4px solid #66fcf1;
+            border-bottom: 5px solid var(--neon-pink);
         }
 
-        h1 {
+        .hero-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            color: #66fcf1;
+            font-size: clamp(2rem, 8vw, 5rem);
             text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+            letter-spacing: 5px;
+            margin: 0;
+            text-shadow: 3px 3px 0px var(--neon-pink), -1px -1px 20px rgba(102, 252, 241, 0.5);
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            color: #45a29e;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: 300;
+            color: var(--steel);
+            background: rgba(0,0,0,0.6);
+            padding: 10px 20px;
+            border-radius: 50px;
         }
 
-        /* Контентная часть */
+        /* Контентная зона */
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 0 20px;
         }
 
-        .grid {
+        .collab-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            gap: 30px;
         }
 
-        /* Карточки игр */
         .card {
             background: #1f2833;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 5px solid #45a29e;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 2px solid #222;
+            border-radius: 15px;
+            padding: 25px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #66fcf1;
+            border-color: var(--neon-pink);
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
         }
 
-        .card h3 {
+        .card h2 {
             font-family: 'Orbitron', sans-serif;
-            color: #66fcf1;
+            color: var(--neon-pink);
             margin-top: 0;
         }
 
-        /* Секция призыва к действию */
-        .join-section {
-            background: #1f2833;
-            text-align: center;
-            padding: 60px 20px;
-            margin-top: 50px;
-            border-radius: 15px;
-        }
-
-        .btn {
+        /* Кнопка "В бой" */
+        .btn-action {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: transparent;
-            color: #66fcf1;
-            border: 2px solid #66fcf1;
+            margin-top: 40px;
+            padding: 15px 40px;
+            background: transparent;
+            color: #fff;
+            border: 2px solid var(--neon-pink);
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
             font-weight: bold;
-            transition: all 0.3s;
-            margin-top: 20px;
+            transition: 0.4s;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
         }
 
-        .btn:hover {
-            background-color: #66fcf1;
-            color: #0b0c10;
-            box-shadow: 0 0 15px #66fcf1;
+        .btn-action:hover {
+            background: var(--neon-pink);
+            box-shadow: 0 0 30px var(--neon-pink);
+            color: #000;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: #111;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 10px;
+            border: 1px dashed var(--steel);
+        }
+
+        .stat-item b {
+            display: block;
+            font-size: 2rem;
+            color: var(--neon-pink);
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #45a29e;
+            padding: 60px;
+            opacity: 0.4;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>TANK FORCE</h1>
-        <div class="subtitle">ГДЕ СТАЛЬ ВСТРЕЧАЕТСЯ С ЯРОСТЬЮ</div>
+        <h1 class="hero-title">KREED X TANKS</h1>
+        <div class="hero-subtitle">Стиль Pussy Boy на полях сражений</div>
+        <a href="#" class="btn-action">ЗАРЯЖАЙ ХИТЫ</a>
     </header>
 
     <div class="container">
-        <section>
-            <h2 style="text-align: center; font-family: 'Orbitron'; color: #66fcf1;">Популярные дисциплины</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>World of Tanks</h3>
-                    <p>Классика танковых сражений. Тактика, командная работа и сотни веток исследования техники середины XX века.</p>
-                </div>
-                <div class="card">
-                    <h3>War Thunder</h3>
-                    <p>Максимальный реализм: комбинированные бои с авиацией и флотом, детальная модель повреждений и современная техника.</p>
-                </div>
-                <div class="card">
-                    <h3>Armored Warfare</h3>
-                    <p>Современные основные боевые танки, динамичный геймплей и упор на технику последних десятилетий.</p>
-                </div>
+        <div class="collab-grid">
+            <div class="card">
+                <h2>TOP PLAYLIST</h2>
+                <p>Слушай Егора, пока штурмуешь "Малиновку". Плейлист для максимального процента побед и крутых фрагов.</p>
             </div>
-        </section>
+            <div class="card">
+                <h2>CUSTOM CAMO</h2>
+                <p>Эксклюзивный розовый камуфляж с автографом Крида. Твой ИС-7 будет самым заметным (и стильным) в ангаре.</p>
+            </div>
+            <div class="card">
+                <h2>FAN TOURNAMENT</h2>
+                <p>Участвуй в турнире "EK FAMILY CUP". Приз — личная встреча и золотые снаряды для твоего танка!</p>
+            </div>
+        </div>
 
-        <section class="join-section">
-            <h2>Готов к бою, танкист?</h2>
-            <p>Присоединяйся к нашему Discord-серверу для поиска взвода и обсуждения последних патчей.</p>
-            <a href="#" class="btn">ВСТУПИТЬ В ГАРНИЗОН</a>
-        </section>
+        <div class="stats">
+            <div class="stat-item">
+                <b>58</b>
+                <span>Уровень пафоса</span>
+            </div>
+            <div class="stat-item">
+                <b>100%</b>
+                <span>Пробитие хитов</span>
+            </div>
+            <div class="stat-item">
+                <b>EK</b>
+                <span>Клан-тег</span>
+            </div>
+        </div>
     </div>
 
     <footer>
-        &copy; 2026 Сообщество любителей бронетехники. Все права защищены.
+        &copy; 2026 Коллаборация, которую никто не ждал, но все заслужили.
     </footer>
 
 </body>
